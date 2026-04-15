@@ -1,75 +1,159 @@
-    
-<style>
-    .swiper-pagination {
-  /* bottom: -10px; */
-}
+<!-- Swiper JS -->
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 
-.swiper {
-  height: 28vw;
-}
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/effect-coverflow';
 
-.collection {
-  padding-inline: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  let swiperContainer: HTMLDivElement;
 
-.collection .content {
-  padding: 1rem;
-  height: 22vw;
-  background-color: white;
-  box-shadow:
-    0 4px 8px 0 rgba(0, 0, 0, 0.1),
-    0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 2.5rem;
-  margin-top: 1rem;
-  overflow: hidden;
-}
+  const elements = [
+    {
+      name: 'Roshen szelet mandulával és kókuszos 29 g',
+      image: 'termekkepek/Roshen-szelet-mandulaval-kokuszos-29g.png',
+    },
+    {
+      name: 'Roshen tejcsokoládé szelet crème brulée 33 g',
+      image: 'termekkepek/Roshen-tejcsokolade-creme-brulee-33g.png',
+    },
+    {
+      name: 'Roshen tejcsokoládé szelet karamell 30 g',
+      image: 'termekkepek/Roshen-tejcsokolade-karamell-30g.png',
+    },
+    {
+      name: 'Tibi Aerated étcsokoládé 80g',
+      image: 'termekkepek/Tibi-aerated-etcsokolade-80g.png',
+    },
+    {
+      name: 'Tibi Aerated tejcsokoládé 80g',
+      image: 'termekkepek/Tibi-aerated-tejcsokolade-80g.png',
+    },
+    {
+      name: 'Tibi epres torta ízű tejcsokoládé 275 g',
+      image: 'termekkepek/Tibi-epres-torta-275g.png',
+    },
+    {
+      name: 'Tibi ét ananász ízű krémmel 90 g',
+      image: 'termekkepek/Tibi-et-ananasz-90g.png',
+    },
+    {
+      name: 'Tibi ét banán ízű krémmel 90 g',
+      image: 'termekkepek/Tibi-et-banan-90g.png',
+    },
+    {
+      name: 'Tibi ét eper ízű krémmel 90 g',
+      image: 'termekkepek/Tibi-et-eper-90g.png',
+    },
+    {
+      name: 'Tibi ét kajszi ízű krémmel 90 g',
+      image: 'termekkepek/Tibi-et-kajszi-90g.png',
+    },
+    {
+      name: 'Tibi ét kakaókrémmel 90 g',
+      image: 'termekkepek/Tibi-et-kakaokrem-90g.png',
+    },
+    {
+      name: 'Tibi ét meggyes és csokoládés krémes 90 g',
+      image: 'termekkepek/Tibi-et-meggyes-csokolades-90g.png',
+    },
+    {
+      name: 'Tibi étcsokoládé 90 g',
+      image: 'termekkepek/Tibi-etcsokolade-90g.png',
+    },
+    {
+      name: 'Tibi étcsokoládé tejes és kakaós krémmel, ostyával 265 g',
+      image: 'termekkepek/Tibi-etcsokolade-tejes-kakaos-265g.png',
+    },
+    {
+      name: 'Tibi étcsokoládé tiramisu ízű krémmel és keksszel 290 g',
+      image: 'termekkepek/Tibi-etcsokolade-tiramisu-290g.png',
+    },
+    {
+      name: 'Tibi tej crème brulée ízű krémmel 90 g',
+      image: 'termekkepek/Tibi-tej-creme-brulee-90g.png',
+    },
+    {
+      name: 'Tibi tej feketeribizli ízű krémmel 90 g',
+      image: 'termekkepek/Tibi-tej-feketeribizli-90g.png',
+    },
+    {
+      name: 'Tibi tej karamell krémmel 87 g',
+      image: 'termekkepek/Tibi-tej-karamell-87g.png',
+    },
+    {
+      name: 'Tibi tej körte ízű krémmel 90 g',
+      image: 'termekkepek/Tibi-tej-korte-90g.png',
+    },
+    {
+      name: 'Tibi tej tejkrémmel és keksszel 100 g',
+      image: 'termekkepek/Tibi-tej-tejkrem-keks-100g.png',
+    },
+    {
+      name: 'Tibi tej tejkrémmel és ostyával 90 g',
+      image: 'termekkepek/Tibi-tej-tejkrem-ostya-90g.png',
+    },
+    {
+      name: 'Tibi tej tejkrémmel, karamellel és keksszel 100 g',
+      image: 'termekkepek/Tibi-tej-tejkrem-karamell-keks-100g.png',
+    },
+    {
+      name: 'Tibi tejcsokoládé 90 g',
+      image: 'termekkepek/Tibi-tejcsokolade-90g.png',
+    },
+    {
+      name: 'Tibi tejcsokoládé csokoládés-mogyorós krémmel és keksszel 290 g',
+      image: 'termekkepek/Tibi-tejcsokolade-csokolades-mogyoros-290g.png',
+    },
+    {
+      name: 'Tibi tejcsokoládé földimogyoróval, földimogyorós krémmel és karamellel 295 g',
+      image: 'termekkepek/Tibi-tejcsokolade-foldimogyoro-karamell-295g.png',
+    },
+    {
+      name: 'Tibi tejcsokoládé mandulával és kókusszal 280 g',
+      image: 'termekkepek/Tibi-tejcsokolade-mandulaval-kokusszal-280g.png',
+    },
+  ];
 
-.swiper-slide img {
-  width: 18vw;
-}
+  onMount(() => {
+    new Swiper(swiperContainer, {
+      modules: [Navigation, Pagination, EffectCoverflow],
 
-.text-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.text-content h3 {
-  font-size: 1.6vw;
-  font-weight: 500;
-}
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: 2,
 
-/* Bigger text, taller cards on mobile view */
-@media (max-width: 1024px) {
-  .text-content h3 {
-    font-size: 4vw;
-    line-height: 1.1;
-  }
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 150,
+        modifier: 2.5,
+        slideShadows: false,
+      },
 
-  .swiper-slide img {
-    width: 50vw;
-  }
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
-  .swiper {
-    height: 70vw;
-  }
+      pagination: {
+        el: '.swiper-pagination',
+      },
 
-  .collection .content {
-    height: 60vw;
-  }
-}
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  });
+</script>
 
-.text-content p {
-  max-width: 22rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  text-align: center;
-}
-</style>    
-    
 <section class="collection SweetSansBold text-[#003366] bg-[#ffe6c7]">
   <div bind:this={swiperContainer} class="swiper mySwiper">
     <div class="swiper-wrapper scale-[0.975]">
@@ -89,152 +173,73 @@
   </div>
 </section>
 
+<style>
+  .swiper-pagination {
+    /* bottom: -10px; */
+  }
 
+  .swiper {
+    height: 28vw;
+  }
 
- <!-- Swiper JS -->
-<script lang="ts">
-  
-import { onMount } from 'svelte';
-import Swiper from 'swiper';
-import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+  .collection {
+    padding-inline: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
+  .collection .content {
+    padding: 1rem;
+    height: 22vw;
+    background-color: white;
+    box-shadow:
+      0 4px 8px 0 rgba(0, 0, 0, 0.1),
+      0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2.5rem;
+    margin-top: 1rem;
+    overflow: hidden;
+  }
 
-  let swiperContainer: HTMLDivElement;
+  .swiper-slide img {
+    width: 18vw;
+  }
 
-  const elements = [
-        {
-          name: "Roshen Double Peanuts tejcsokoládé szelet földimogyorós töltelékkel 29 g",
-          image: "termekkepek/Roshen-Double-Peanuts-29g.png",
-        },
-        {
-          name: "Roshen étcsokoládé szelet brandy 33 g",
-          image: "termekkepek/Roshen-etcsokolade-szelet-brandy-33g.png",
-        },
-        {
-          name: "Roshen Lovita almás-fahéjas töltött teasütemény 168 g",
-          image: "termekkepek/Roshen-Lovita-almas-fahajas-168g.png",
-        },
-        {
-          name: "Roshen Lovita epres töltelékkel 168 g",
-          image: "termekkepek/Roshen-Lovita-epres-168g.png",
-        },
-        {
-          name: "Roshen Lovita teasütemény meggy és vanília ízesítésű töltelékkel 168 g",
-          image: "termekkepek/Roshen-Lovita-meggy-vanilia-168g.png",
-        },
-        {
-          name: "Roshen szelet mandulával és kókuszos 29 g",
-          image: "termekkepek/Roshen-szelet-mandulaval-kokusszal-29g.png",
-        },
-        {
-          name: "Roshen tejcsokoládé szelet karamell 30 g",
-          image: "termekkepek/Roshen-tejcsokolade-karamell-30g.png",
-        },
-        {
-          name: "Tibi epres torta ízű tejcsokoládé 275 g",
-          image: "termekkepek/Tibi-epres-torta-275g.png",
-        },
-        {
-          name: "Tibi ét ananász ízű krémmel 90 g",
-          image: "termekkepek/Tibi-et-ananasz-90g.png",
-        },
-        {
-          name: "Tibi ét banán ízű krémmel 90 g",
-          image: "termekkepek/Tibi-et-banan-90g.png",
-        },
-        {
-          name: "Tibi ét eper ízű krémmel 90 g",
-          image: "termekkepek/Tibi-et-eper-90g.png",
-        },
-        {
-          name: "Tibi ét meggyes és csokoládés krémes 90 g",
-          image: "termekkepek/Tibi-et-meggyes-csokolades-90g.png",
-        },
-        {
-          name: "Tibi étcsokoládé 90 g",
-          image: "termekkepek/Tibi-etcsokolade-90g.png",
-        },
-        {
-          name: "Tibi étcsokoládé tejes és kakaós krémmel, ostyával 265 g",
-          image: "termekkepek/Tibi-etcsokolade-tejes-kakaos-265g.png",
-        },
-        {
-          name: "Tibi étcsokoládé tiramisu ízű krémmel és keksszel 290 g",
-          image: "termekkepek/Tibi-etcsokolade-tiramisu-290g.png",
-        },
-        {
-          name: "Tibi tej körte ízű krémmel 90 g",
-          image: "termekkepek/Tibi-tej-korte-90g.png",
-        },
-        {
-          name: "Tibi tej tejkrémmel és keksszel 100 g",
-          image: "termekkepek/Tibi-tej-tejkrem-keks-100g.png",
-        },
-        {
-          name: "Tibi tej tejkrémmel és ostyával 90 g",
-          image: "termekkepek/Tibi-tej-tejkrem-ostya-90g.png",
-        },
-        {
-          name: "Tibi tej tejkrémmel, karamellel és keksszel 100 g",
-          image: "termekkepek/Tibi-tej-tejkrem-karamell-keks-100g.png",
-        },
-        {
-          name: "Tibi tejcsokoládé 90 g",
-          image: "termekkepek/Tibi-tejcsokolade-90g.png",
-        },
-        {
-          name: "Tibi tejcsokoládé csokoládés-mogyorós krémmel és keksszel 290 g",
-          image: "termekkepek/Tibi-tejcsokolade-csokolades-mogyoros-290g.png",
-        },
-        {
-          name: "Tibi tejcsokoládé földimogyoróval, földimogyorós krémmel és karamellel 295 g",
-          image: "termekkepek/Tibi-tejcsokolade-foldimogyoro-karamell-295g.png",
-        },
-        {
-          name: "Tibi tejcsokoládé mandulával és kókusszal 280 g",
-          image: "termekkepek/Tibi-tejcsokolade-mandulaval-kokusszal-280g.png",
-        },
-      ];
+  .text-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .text-content h3 {
+    font-size: 1.6vw;
+    font-weight: 500;
+  }
 
-  onMount(() => {
+  /* Bigger text, taller cards on mobile view */
+  @media (max-width: 1024px) {
+    .text-content h3 {
+      font-size: 4vw;
+      line-height: 1.1;
+    }
 
-    
+    .swiper-slide img {
+      width: 50vw;
+    }
 
-    new Swiper(swiperContainer, {
-  modules: [Navigation, Pagination, EffectCoverflow],
+    .swiper {
+      height: 70vw;
+    }
 
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  loop: true,
-  slidesPerView: 2,
+    .collection .content {
+      height: 60vw;
+    }
+  }
 
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 150,
-    modifier: 2.5,
-    slideShadows: false,
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  breakpoints: {
-    768: {
-      slidesPerView: 3,
-    },
-  },
-});
-  });
-</script>
+  .text-content p {
+    max-width: 22rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+  }
+</style>

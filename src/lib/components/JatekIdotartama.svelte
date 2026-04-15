@@ -1,4 +1,4 @@
-<section class="relative bg-[#ffe6c7] rounded-t-3xl lg:-mt-[1vw] -mt-[6vw]">
+<section class="relative bg-[#ffe6c7] overflow-hidden pb-40 rounded-t-3xl lg:-mt-[12vw] -mt-[6vw]">
   <img
     src="assets/BG pattern.svg"
     alt="Barack háttér"
@@ -52,8 +52,8 @@
   <img src="assets/Kék nyíl.svg" alt="kék nyíl" class="absolute top-[19vw] left-[16vw] w-[10vw]" />
   <img src="assets/Zöld nyíl.svg" alt="Zöld nyíl" class="absolute top-[20vw] left-[8vw] w-[11vw]" />
   <img
-    src="assets/Narancs néhyzet_hogyan játszhatsz.svg"
-    alt="narancssárga négyzet"
+    src="assets/narancs folt.svg"
+    alt="narancssárga folt"
     class="absolute top-[30vw] left-[8vw] w-[10vw]"
   />
   <img
@@ -82,8 +82,8 @@
     class="absolute top-[20vw] right-[24vw] w-[14vw]"
   />
   <img
-    src="assets/Két színes négyzet_hogyan játszhatsz.svg"
-    alt="két színes négyzet"
-    class="absolute top-[38vw] right-[8vw] z-11 w-[10vw]"
+    src="assets/sárga piros.svg"
+    alt="sárga folt"
+    class="absolute top-[38vw] right-[8vw] z-11 w-[18vw]"
   />
 </section>

@@ -1,43 +1,39 @@
- <section class="pt-[5vw] relative bg-[#ffe6c7]">
-      <h2
-        class="markerfield text-[#E21E13] lg:text-[4vw] text-[8vw] text-center leading-[3vw] py-[3vw]"
-      >
-        NYEREMÉNYEK
-      </h2>
-      <img
-        src="assets/fireworks (1).svg"
-        alt="tüzijáték"
-        class="absolute top-[6vw] left-[18vw] w-[8vw]"
-      />
-      <img
-        src="assets/fireworks.svg"
-        alt="tüzijáték"
-        class="absolute top-[6vw] right-[18vw] w-[8vw]"
-      />
-      <img
-        class="mt-[2vw] w-[85vw] mx-auto relative z-10"
-        src="assets/nyeremenyek.png"
-        alt="Dobogón nyeremények"
-      />
-      <p
-        class="markerfield z-10 text-white text-[2.3vw] absolute top-[41vw] left-[6vw] w-[25vw] text-center leading-[2.3vw]"
-      >
-        NAPI NYEREMÉNy: <br />
-        2 x 10 000 Ft értékű <br />
-        PENNY Nyereménykártya
-      </p>
-      <p
-        class="markerfield z-10 text-white text-[3vw] absolute-center top-[40vw] w-[25vw] text-center leading-[3vw]"
-      >
-        FŐDÍJ: <br />
-        500 000 Ft értékű <br />
-        PENNY Nyereménykártya
-      </p>
-      <p
-        class="markerfield z-10 text-[#003366] text-[2.3vw] absolute top-[41vw] right-[8vw] w-[25vw] text-center leading-[2.3vw]"
-      >
-        HETI NYEREMÉNY: <br />
-        1 x Bosch <br />
-        konyhai robotgép
-      </p>
-    </section>
+<section class="pt-[5vw] relative bg-[#ffe6c7]">
+  <h2
+    class="markerfield text-[#E21E13] lg:text-[4vw] text-[8vw] text-center leading-[3vw] py-[3vw]"
+  >
+    NYEREMÉNYEK
+  </h2>
+  <img
+    src="assets/fireworks (1).svg"
+    alt="tüzijáték"
+    class="absolute top-[6vw] left-[18vw] w-[8vw]"
+  />
+  <img src="assets/fireworks.svg" alt="tüzijáték" class="absolute top-[6vw] right-[18vw] w-[8vw]" />
+  <img
+    class="mt-[2vw] w-[85vw] mx-auto relative z-10"
+    src="assets/nyeremenyek.png"
+    alt="Dobogón nyeremények"
+  />
+  <p
+    class="markerfield z-10 text-white text-[2.3vw] absolute top-[41vw] left-[6vw] w-[25vw] text-center leading-[2.3vw]"
+  >
+    NAPI NYEREMÉNy: <br />
+    2 x 10 000 Ft értékű <br />
+    PENNY Nyereménykártya
+  </p>
+  <p
+    class="markerfield z-10 text-white text-[3vw] absolute-center top-[40vw] w-[25vw] text-center leading-[3vw]"
+  >
+    FŐDÍJ: <br />
+    500 000 Ft értékű <br />
+    PENNY Nyereménykártya
+  </p>
+  <p
+    class="markerfield z-10 text-[#003366] text-[2.3vw] absolute top-[41vw] right-[8vw] w-[25vw] text-center leading-[2.3vw]"
+  >
+    HETI NYEREMÉNY: <br />
+    1 x Bosch <br />
+    konyhai robotgép
+  </p>
+</section>
