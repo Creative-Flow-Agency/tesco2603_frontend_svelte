@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="432" height="294" viewBox="0 0 432 294">
+  <defs>
+    <filter id="Fehér_flekk" x="0" y="0" width="432" height="294" filterUnits="userSpaceOnUse">
+      <feOffset dx="10" dy="-4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feFlood flood-opacity="0.071"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Fehér_flekk)">
+    <rect id="Fehér_flekk-2" data-name="Fehér flekk" width="342" height="204" rx="25" transform="translate(35 49)" fill="#fff"/>
+  </g>
+</svg>
