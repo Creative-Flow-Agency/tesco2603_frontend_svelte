@@ -1,4 +1,4 @@
-<section class="pt-[5vw] relative bg-[#ffe6c7]">
+<section class="pt-[5vw] mt-[5vw] relative bg-[#ffe6c7]">
   <h2 class="markerfield lg:text-[4vw] text-[8vw] text-center leading-[3vw] py-[3vw]">
     JÁTÉKBAN RÉSZT VEVŐ TERMÉKEK
   </h2>

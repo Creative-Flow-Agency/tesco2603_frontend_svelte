@@ -69,6 +69,6 @@
   <img
     src="assets/also képek.png"
     alt="Tibi csokik, figura blokkal a kezében"
-    class="translate-x-[20vw]"
+    class="w-[60vw] ml-auto"
   />
 </section>
