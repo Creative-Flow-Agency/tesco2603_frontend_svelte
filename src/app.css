@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+/* dark blue: #003366  */
+/* darker blue: #002447  */
+/* light blue: #008ed0  */
+/* green: #b4cc06  */
+/* barack: #ffe6c7  */
+/* red: #E21E13  */
+/* yellow: #F8E300  */
+
+body,
+html {
+  @apply overflow-x-hidden;
+}
+
+body {
+  @apply text-[#003366];
+  @apply bg-[#ffe6c7];
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+.markerfield {
+  font-family: 'markerfield', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+@font-face {
+  font-family: 'markerfield';
+  src: url('./fonts/Markerfield-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'sweetsans';
+  src: url('./fonts/Sweet\ -\ SweetSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.absolute-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
