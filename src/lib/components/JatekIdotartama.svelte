@@ -1,10 +1,10 @@
-<section class="relative bg-[#ffe6c7] rounded-t-3xl lg:-mt-[12vw] -mt-[6vw]">
+<section class="relative bg-[#ffe6c7] rounded-t-3xl lg:-mt-[12.5vw]">
   <img
     src="assets/BG pattern.svg"
     alt="Barack háttér"
     class="w-full z-1 scale-[1.05] absolute top-0 left-0 pointer-events-none"
   />
-  <h2 class="markerfield lg:text-[4vw] text-[8vw] text-center leading-[3vw] py-[3vw]">
+  <h2 class="markerfield lg:text-[4vw] text-[8vw] text-center leading-[3vw] pt-[6vw] pb-[3vw]">
     A PROMÓCIÓ IDŐTARTAMA
   </h2>
   <div class="relative mb-[1vw]">
