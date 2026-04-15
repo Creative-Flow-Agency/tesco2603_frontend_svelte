@@ -174,10 +174,6 @@
 </section>
 
 <style>
-  .swiper-pagination {
-    /* bottom: -10px; */
-  }
-
   .swiper {
     height: 28vw;
   }
@@ -236,10 +232,10 @@
     }
   }
 
-  .text-content p {
+  /* .text-content p {
     max-width: 22rem;
     font-size: 0.8rem;
     font-weight: 400;
     text-align: center;
-  }
+  } */
 </style>

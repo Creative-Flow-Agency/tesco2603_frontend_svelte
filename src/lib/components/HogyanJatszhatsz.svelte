@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
   import SzemelyesAdatok from './form/SzemelyesAdatok.svelte';
   import TermekAdatok from './form/TermekAdatok.svelte';
 
+  let vendegForm: HTMLDivElement;
   let formType = 'none';
 </script>
 
@@ -13,7 +14,10 @@
   </h2>
   <div class="flex md:gap-12 gap-4 md:mb-0 mb-4 md:flex-row flex-col justify-center mt-12 px-12">
     <button
-      on:click={() => (formType = 'guest')}
+      on:click={() => {
+        formType = 'guest';
+        vendegForm.scrollIntoView({ behavior: 'smooth' });
+      }}
       id="guestBtn"
       class="rounded-xl tracking-widest! p-4 text-xl border-2 border-[#002447] shadow-lg text-white markerfield bg-[#008ed0]"
     >
@@ -29,7 +33,7 @@
     </button>
   </div>
   <!-- vendégként játszom -->
-  <div class:hidden={formType !== 'guest'} class="hidden mt-4">
+  <div class:hidden={formType !== 'guest'} class="hidden mt-4" bind:this={vendegForm}>
     <div class="sm:w-auto w-[95vw]">
       <form
         id="submissionForm"
