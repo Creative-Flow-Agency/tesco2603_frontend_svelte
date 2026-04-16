@@ -29,12 +29,12 @@ button {
 
 @font-face {
   font-family: 'markerfield';
-  src: url('/penny2603_frontend_svelte/fonts/Markerfield-Regular.otf') format('opentype');
+  src: url('/tesco2603_frontend_svelte/fonts/Markerfield-Regular.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'sweetsans';
-  src: url('/penny2603_frontend_svelte/fonts/SweetSans-Regular.otf') format('opentype');
+  src: url('/tesco2603_frontend_svelte/fonts/SweetSans-Regular.otf') format('opentype');
 }
 
 .absolute-center {
